@@ -25,7 +25,7 @@ public class Tabuleiro {
             adicionarPeca(peca);
         }
         else{
-            if()
+            
         }
     }
 }
