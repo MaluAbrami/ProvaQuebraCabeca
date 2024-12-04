@@ -10,6 +10,10 @@ public class Peca {
     }
     
     public void adicionarBorda(Borda borda){
+        //indice 0 - borda de cima
+        //indice 1 - borda direita
+        //indice 2 - borda de baixo
+        //indice 3 - borda esquerda
         for(int i = 0; i < 4; i++){
             if(i < 4)
                 bordas[i] = borda;
