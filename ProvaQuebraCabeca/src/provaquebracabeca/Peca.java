@@ -7,7 +7,12 @@ public class Peca {
     private Borda[] bordas;
     
     public Peca(){
+        this.id = contadorId++;
         bordas = new Borda[4];
+    }
+    
+    public int getId(){
+        return id;
     }
     
     public Borda[] getBorda(){
@@ -19,13 +24,12 @@ public class Peca {
         //indice 1 - borda direita
         //indice 2 - borda de baixo
         //indice 3 - borda esquerda
-        for(int i = 0; i < 4; i++){
-            if(contador < 4){
+        if(contador < 4){
                 bordas[contador] = borda;
                 contador++;
-            }
-            else
-               System.out.println("Essa peca ja possui todas as bordas");
+        }
+        else{
+            System.out.println("Essa peca ja possui todas as bordas");
         }
     }
     
@@ -39,7 +43,6 @@ public class Peca {
             return false;
         }
         else{ //aqui ambas sao diferentes entao encaixam
-            System.out.println("Encaixe possivel");
             return true;
         }
     }

@@ -59,9 +59,20 @@ public class Tabuleiro {
 
         if (encaixa) {
             adicionarPeca(peca, x, y);
-            System.out.println("Peça encaixada com sucesso!");
+            System.out.println("Peca de ID " + peca.getId() + " foi encaixada com sucesso!");
         } else {
-            System.out.println("A peça não encaixa corretamente nessa posição.");
+            System.out.println("A peca nao encaixa corretamente nessa posicao.");
+        }
+    }
+    
+    public void imprimirTabuleiro(){
+        int contador = 0;
+        
+        System.out.println("Pecas do tabuleiro");
+        for(Peca[] p: pecas){ 
+            Peca peca = p[contador];
+            System.out.println(peca.getId());
+            ++contador;
         }
     }
 }
