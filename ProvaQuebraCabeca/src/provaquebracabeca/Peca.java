@@ -3,10 +3,15 @@ package provaquebracabeca;
 public class Peca {
     private int id;
     private static int contadorId = 1;
+    private int contador = 0;
     private Borda[] bordas;
     
     public Peca(){
         bordas = new Borda[4];
+    }
+    
+    public Borda[] getBorda(){
+        return bordas;
     }
     
     public void adicionarBorda(Borda borda){
@@ -15,8 +20,10 @@ public class Peca {
         //indice 2 - borda de baixo
         //indice 3 - borda esquerda
         for(int i = 0; i < 4; i++){
-            if(i < 4)
-                bordas[i] = borda;
+            if(contador < 4){
+                bordas[contador] = borda;
+                contador++;
+            }
             else
                System.out.println("Essa peca ja possui todas as bordas");
         }
@@ -27,7 +34,7 @@ public class Peca {
             System.out.println("Impossivel realizar o encaixe de bordas iguais");
             return false;
         }
-        else if(bd1.getDentes() == "preenchido" || bd2.getDentes() == "preenchido"){
+        else if(bd1.getDentes().equals("preenchido") || bd2.getDentes().equals("preenchido")){
             System.out.println("Impossivel realizar o encaixe de bordas totalmente preenchidas");
             return false;
         }
