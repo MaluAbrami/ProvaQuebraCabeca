@@ -3,9 +3,11 @@ package provaquebracabeca;
 public class ProvaQuebraCabeca {
 
     public static void main(String[] args) {
+        Tabuleiro tabuleiro = new Tabuleiro();
+        
         Borda bd1 = new Borda("vazio, preenchido"); //Borda com 1 preenchedi a esquerda
         Borda bd2 = new Borda("preenchido, vazio"); //Borda com 1 preenchido a direita
-        Borda bd3 = new Borda("preenchido"); //Borda totalmente preenchida
+        Borda bd3 = new Borda("preenchido"); //Borda totalmente preenchido
         
         //PECA CENTRAL
         Peca pecaCentral = new Peca();
@@ -63,6 +65,19 @@ public class ProvaQuebraCabeca {
         pecaDaBordaInferiorE.adicionarBorda(bd2);
         pecaDaBordaInferiorE.adicionarBorda(bd3);
         pecaDaBordaInferiorE.adicionarBorda(bd3);
+        
+        //ADICIONANDO PECAS AO TABULEIRO
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaSuperiorE, 0, 0);
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaSuperiorD, 0, 2);
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaInferiorD, 2, 2);
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaInferiorE, 2, 0);
+        
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaCentralSuperior, 0, 1);
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaCentralInferior, 2, 1);
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaCentralDireita, 1, 2);
+        tabuleiro.encaixarPecaNoTabuleiro(pecaDaBordaCentralEsquerda, 1, 0);
+        
+        tabuleiro.encaixarPecaNoTabuleiro(pecaCentral, 1, 1);
     }
     
 }
