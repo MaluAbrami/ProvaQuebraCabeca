@@ -35,11 +35,9 @@ public class Peca {
     
     public boolean verificarEncaixe(Borda bd1, Borda bd2){
         if(bd1.equals(bd2)){
-            System.out.println("Impossivel realizar o encaixe de bordas iguais");
             return false;
         }
         else if(bd1.getDentes().equals("preenchido") || bd2.getDentes().equals("preenchido")){
-            System.out.println("Impossivel realizar o encaixe de bordas totalmente preenchidas");
             return false;
         }
         else{ //aqui ambas sao diferentes entao encaixam

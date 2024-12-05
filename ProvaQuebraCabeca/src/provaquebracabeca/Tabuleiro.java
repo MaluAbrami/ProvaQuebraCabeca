@@ -19,7 +19,6 @@ public class Tabuleiro {
         if (x >= 0 && y >= 0 && x < 3 && y < 3) {
             if (pecas[x][y] == null) {
                 pecas[x][y] = peca;
-                contador++;
             } else {
                 System.out.println("Posição já ocupada!");
             }
@@ -65,14 +64,17 @@ public class Tabuleiro {
         }
     }
     
-    public void imprimirTabuleiro(){
-        int contador = 0;
-        
-        System.out.println("Pecas do tabuleiro");
-        for(Peca[] p: pecas){ 
-            Peca peca = p[contador];
-            System.out.println(peca.getId());
-            ++contador;
+    public void imprimirTabuleiro() {
+        System.out.println("Tabuleiro atual:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (pecas[i][j] != null) {
+                    System.out.print(" " + pecas[i][j].getId() + " ");
+                } else {
+                    System.out.print(" - "); // Mostra '-' se a posição está vazia
+                }
+            }
+            System.out.println(); // Quebra de linha para cada linha do tabuleiro
         }
     }
 }
